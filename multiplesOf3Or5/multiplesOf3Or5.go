@@ -12,10 +12,13 @@ func main() {
 }
 
 func findSumOfMultiplesOf3Or5(x int, y int, n int) int {
-	return sumMultiples(x, n) + sumMultiples(y, n) - sumMultiples(x*y, n)
+	return sumMultiplesBelowRange(x, n) + sumMultiplesBelowRange(y, n) - sumMultiplesBelowRange(x*y, n)
 }
 
-func sumMultiples(value int, n int) int {
+func sumMultiplesBelowRange(value int, n int) int {
+	if value == 0 {
+		return 0
+	}
 	sum := (n - 1) / value
 	return sum * (sum + 1) / 2 * value
 }
